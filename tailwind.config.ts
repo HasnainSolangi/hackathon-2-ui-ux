@@ -62,6 +62,15 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      animation: {
+        seamlessSlide: "seamlessSlide 20s linear infinite", // Smooth, infinite sliding animation
+      },
+      keyframes: {
+        seamlessSlide: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
     },
   },
   plugins: [tailwindcssAnimate],

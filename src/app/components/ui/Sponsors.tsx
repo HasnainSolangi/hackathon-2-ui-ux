@@ -1,58 +1,31 @@
 import Image from "next/image";
 
+const logos = [
+  "/zapier.png",
+  "/pipdrive.png",
+  "/clbBank.png",
+  "/Z_logo.png",
+  "/burnt.png",
+  "/pandaDoc.png",
+  "/moz.png",
+];
+
 const Sponsors = () => {
+  const combinedLogos = [...logos, ...logos]; // Original + Duplicate
+
   return (
-    <div className="w-full max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 py-8 mb-20">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center">
-        <Image 
-          src="/zapier.png"
-          alt="zapier"
-          width={60}
-          height={60}
-          className="w-auto h-auto max-h-[60px] object-contain"
-        />
-        <Image 
-          src="/pipdrive.png"
-          alt="pipdrive"
-          width={60}
-          height={60}
-          className="w-auto h-auto max-h-[60px] object-contain"
-        />
-        <Image 
-          src="/clbBank.png"
-          alt="clbBank"
-          width={60}
-          height={60}
-          className="w-auto h-auto max-h-[60px] object-contain"
-        />
-        <Image 
-          src="/Z_logo.png"
-          alt="Z_logo"
-          width={60}
-          height={60}
-          className="w-auto h-auto max-h-[60px] object-contain"
-        />
-        <Image 
-          src="/burnt.png"
-          alt="burnt"
-          width={60}
-          height={60}
-          className="w-auto h-auto max-h-[60px] object-contain"
-        />
-        <Image 
-          src="/pandaDoc.png"
-          alt="pandaDoc"
-          width={60}
-          height={60}
-          className="w-auto h-auto max-h-[60px] object-contain"
-        />
-        <Image 
-          src="/moz.png"
-          alt="moz"
-          width={60}
-          height={60}
-          className="w-auto h-auto max-h-[60px] object-contain"
-        />
+    <div className="w-full overflow-hidden bg-white py-8">
+      <div className="flex items-center gap-8 sm:gap-12 animate-seamlessSlide whitespace-nowrap">
+        {combinedLogos.map((logo, index) => (
+          <Image
+            key={index}
+            src={logo}
+            alt={`Sponsor logo ${index + 1}`}
+            width={120}
+            height={120}
+            className="w-auto h-auto max-h-[40px] sm:max-h-[60px] object-contain"
+          />
+        ))}
       </div>
     </div>
   );
